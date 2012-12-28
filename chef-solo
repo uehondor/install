@@ -13,10 +13,10 @@ gpg --export packages@opscode.com | sudo tee /etc/apt/trusted.gpg.d/opscode-keyr
 sudo apt-get update
 
 #Install opscode-keyring package
-sudo apt-get install opscode-keyring #permanent upgradeable keyring
+sudo apt-get install opscode-keyring -y #permanent upgradeable keyring
 
 #Upgrade existing packages
-sudo apt-get upgrade
+sudo apt-get upgrade -y
 
 #Install chef
 echo "chef chef/chef_server_url string none" | sudo debconf-set-selections && sudo apt-get install chef -y
